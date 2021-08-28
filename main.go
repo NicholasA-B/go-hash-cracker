@@ -19,6 +19,10 @@ func main() {
 	passwordList := os.Args[3]
 	hash := pass.ReadHash(hashFile)
 	
+	if hash == "1" {
+		os.Exit(1)
+	}
+	
 	str := pass.CrackSha1Hash(hash, useSalts, passwordList)
 	fmt.Println(str)
 }

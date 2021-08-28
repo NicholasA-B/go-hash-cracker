@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"strings"
+	"regexp"
 )
 
 func readInPasswords(passwordList string) []string {
@@ -44,7 +45,22 @@ func ReadHash(str string) string {
 	if err != nil {
 		fmt.Println(err)
 	}
-	return string(b)
+	isHash := validateHash(string(b))
+	if isHash == true {
+		return string(b)
+	} else {
+		return "1"
+	}
+}
+
+func validateHash(str string) bool {
+	matched, _ := regexp.MatchString(`^[a-z0-9]{40}$`, str)
+	if matched {
+		return true
+	} else {
+		fmt.Println("NOT A VALID SHA-1 HASH")
+		return false
+	}
 }
 
 func CrackSha1Hash(str string, useSalt bool, passwordList string) string {
