@@ -32,7 +32,7 @@
 
   <p align="center">
     
-GoHashCrack is a highly efficient and robust hash cracking tool developed in Go (Golang). Designed to leverage the powerful concurrency features of Go, this tool offers a fast and effective solution for decrypting hashed passwords and other cryptographic hash functions. It's particularly adept at handling large volumes of data and complex cracking processes, making it a valuable tool for cybersecurity professionals and ethical hackers.
+GoHashCrack is a highly efficient and robust hash cracking tool developed in Go (Golang). Designed to leverage the powerful concurrency features of Go, this tool offers a fast and effective solution for decrypting hashed and salted passwords and other cryptographic hash functions.
 
 Key Features:
     <br />
